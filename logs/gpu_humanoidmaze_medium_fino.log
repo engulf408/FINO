@@ -1,23 +1,401 @@
 I1021 16:57:36.933792 132907761025152 ctypesloader.py:70] Failed to load library ( 'libOpenGL.so.0' ): libOpenGL.so.0: cannot open shared object file: No such file or directory
 I1021 16:57:36.935642 132907761025152 acceleratesupport.py:24] No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
 I1021 16:57:36.943372 132907761025152 ctypesloader.py:70] Failed to load library ( 'libOpenGL.so.0' ): libOpenGL.so.0: cannot open shared object file: No such file or directory
-  0%|          | 0/1500000 [00:00<?, ?it/s]
-  0%|          | 0/20 [00:00<?, ?it/s][A
-  5%|▌         | 1/20 [00:12<03:54, 12.32s/it][A
- 10%|█         | 2/20 [00:19<02:43,  9.07s/it][A
- 15%|█▌        | 3/20 [00:25<02:16,  8.05s/it][A
- 20%|██        | 4/20 [00:32<02:01,  7.59s/it][A
- 25%|██▌       | 5/20 [00:39<01:49,  7.33s/it][A
- 30%|███       | 6/20 [00:46<01:40,  7.17s/it][A
- 35%|███▌      | 7/20 [00:53<01:32,  7.09s/it][A
- 40%|████      | 8/20 [01:00<01:24,  7.02s/it][A
- 45%|████▌     | 9/20 [01:07<01:16,  6.98s/it][A
- 50%|█████     | 10/20 [01:14<01:09,  6.94s/it][A
- 55%|█████▌    | 11/20 [01:21<01:02,  6.94s/it][A
- 60%|██████    | 12/20 [01:27<00:55,  6.94s/it][A
- 65%|██████▌   | 13/20 [01:34<00:48,  6.89s/it][A
- 70%|███████   | 14/20 [01:41<00:41,  6.86s/it][A
- 75%|███████▌  | 15/20 [01:48<00:34,  6.83s/it][A
- 80%|████████  | 16/20 [01:55<00:27,  6.80s/it][A
- 85%|████████▌ | 17/20 [02:01<00:20,  6.80s/it][A
- 90%|█████████ | 18/20 [02:08<00:13,  6.79s/it][A
+
+
+
+  5%|▌         | 1/20 [00:12<03:54, 12.32s/it][A
+
+ 10%|█         | 2/20 [00:19<02:43,  9.07s/it][A
+
+ 15%|█▌        | 3/20 [00:25<02:16,  8.05s/it][A
+
+ 20%|██        | 4/20 [00:32<02:01,  7.59s/it][A
+
+ 25%|██▌       | 5/20 [00:39<01:49,  7.33s/it][A
+
+ 30%|███       | 6/20 [00:46<01:40,  7.17s/it][A
+
+ 35%|███▌      | 7/20 [00:53<01:32,  7.09s/it][A
+
+ 40%|████      | 8/20 [01:00<01:24,  7.02s/it][A
+
+ 45%|████▌     | 9/20 [01:07<01:16,  6.98s/it][A
+
+ 50%|█████     | 10/20 [01:14<01:09,  6.94s/it][A
+
+ 55%|█████▌    | 11/20 [01:21<01:02,  6.94s/it][A
+
+ 60%|██████    | 12/20 [01:27<00:55,  6.94s/it][A
+
+ 65%|██████▌   | 13/20 [01:34<00:48,  6.89s/it][A
+
+ 70%|███████   | 14/20 [01:41<00:41,  6.86s/it][A
+
+ 75%|███████▌  | 15/20 [01:48<00:34,  6.83s/it][A
+
+ 80%|████████  | 16/20 [01:55<00:27,  6.80s/it][A
+
+ 85%|████████▌ | 17/20 [02:01<00:20,  6.80s/it][A
+
+ 90%|█████████ | 18/20 [02:08<00:13,  6.79s/it][A
+
+ 95%|█████████▌| 19/20 [02:15<00:06,  6.77s/it][A
+
+100%|██████████| 20/20 [02:22<00:00,  6.76s/it][A
+100%|██████████| 20/20 [02:22<00:00,  7.10s/it]
+
+  0%|          | 1/1500000 [02:53<72379:44:40, 173.71s/it]
+  0%|          | 51/1500000 [02:53<1280:34:49,  3.07s/it] 
+  0%|          | 106/1500000 [02:53<582:19:10,  1.40s/it]
+
+
+  5%|▌         | 1/20 [00:06<02:08,  6.77s/it][A
+
+ 10%|█         | 2/20 [00:13<02:02,  6.81s/it][A
+
+ 15%|█▌        | 3/20 [00:20<01:56,  6.85s/it][A
+
+ 20%|██        | 4/20 [00:27<01:50,  6.90s/it][A
+
+ 25%|██▌       | 5/20 [00:34<01:43,  6.90s/it][A
+
+ 30%|███       | 6/20 [00:41<01:36,  6.91s/it][A
+
+ 35%|███▌      | 7/20 [00:48<01:29,  6.92s/it][A
+
+ 40%|████      | 8/20 [00:55<01:22,  6.92s/it][A
+
+ 45%|████▌     | 9/20 [01:02<01:15,  6.90s/it][A
+
+ 50%|█████     | 10/20 [01:08<01:09,  6.91s/it][A
+
+ 55%|█████▌    | 11/20 [01:15<01:02,  6.89s/it][A
+
+ 60%|██████    | 12/20 [01:22<00:55,  6.88s/it][A
+
+ 65%|██████▌   | 13/20 [01:29<00:48,  6.89s/it][A
+
+ 70%|███████   | 14/20 [01:36<00:41,  6.91s/it][A
+
+ 75%|███████▌  | 15/20 [01:43<00:34,  6.91s/it][A
+
+ 80%|████████  | 16/20 [01:50<00:27,  6.90s/it][A
+
+ 85%|████████▌ | 17/20 [01:57<00:20,  6.93s/it][A
+
+ 90%|█████████ | 18/20 [02:04<00:13,  6.96s/it][A
+
+ 95%|█████████▌| 19/20 [02:11<00:06,  7.00s/it][A
+
+100%|██████████| 20/20 [02:18<00:00,  7.00s/it][A
+100%|██████████| 20/20 [02:18<00:00,  6.92s/it]
+
+
+
+  5%|▌         | 1/20 [00:06<02:12,  6.98s/it][A
+
+ 10%|█         | 2/20 [00:13<02:03,  6.88s/it][A
+
+ 15%|█▌        | 3/20 [00:20<01:57,  6.90s/it][A
+
+ 20%|██        | 4/20 [00:27<01:50,  6.91s/it][A
+
+ 25%|██▌       | 5/20 [00:34<01:42,  6.86s/it][A
+
+ 30%|███       | 6/20 [00:41<01:36,  6.86s/it][A
+
+ 35%|███▌      | 7/20 [00:46<01:21,  6.25s/it][A
+
+ 40%|████      | 8/20 [00:52<01:13,  6.16s/it][A
+
+ 45%|████▌     | 9/20 [00:59<01:10,  6.37s/it][A
+
+ 50%|█████     | 10/20 [01:05<01:05,  6.50s/it][A
+
+ 55%|█████▌    | 11/20 [01:12<00:59,  6.61s/it][A
+
+ 60%|██████    | 12/20 [01:19<00:53,  6.70s/it][A
+
+ 65%|██████▌   | 13/20 [01:26<00:47,  6.78s/it][A
+
+ 70%|███████   | 14/20 [01:33<00:40,  6.83s/it][A
+
+ 75%|███████▌  | 15/20 [01:40<00:34,  6.87s/it][A
+
+ 80%|████████  | 16/20 [01:47<00:27,  6.88s/it][A
+
+ 85%|████████▌ | 17/20 [01:54<00:20,  6.89s/it][A
+
+ 90%|█████████ | 18/20 [02:01<00:13,  6.87s/it][A
+
+ 95%|█████████▌| 19/20 [02:08<00:06,  6.95s/it][A
+
+100%|██████████| 20/20 [02:15<00:00,  6.98s/it][A
+100%|██████████| 20/20 [02:15<00:00,  6.77s/it]
+
+
+
+  5%|▌         | 1/20 [00:07<02:13,  7.02s/it][A
+
+ 10%|█         | 2/20 [00:14<02:06,  7.01s/it][A
+
+ 15%|█▌        | 3/20 [00:21<01:59,  7.05s/it][A
+
+ 20%|██        | 4/20 [00:28<01:52,  7.02s/it][A
+
+ 25%|██▌       | 5/20 [00:35<01:44,  6.99s/it][A
+
+ 30%|███       | 6/20 [00:42<01:38,  7.01s/it][A
+
+ 35%|███▌      | 7/20 [00:49<01:30,  6.99s/it][A
+
+ 40%|████      | 8/20 [00:55<01:23,  6.96s/it][A
+
+ 45%|████▌     | 9/20 [01:02<01:16,  6.94s/it][A
+
+ 50%|█████     | 10/20 [01:09<01:09,  6.92s/it][A
+
+ 55%|█████▌    | 11/20 [01:16<01:02,  6.91s/it][A
+
+ 60%|██████    | 12/20 [01:23<00:55,  6.91s/it][A
+
+ 65%|██████▌   | 13/20 [01:30<00:48,  6.90s/it][A
+
+ 70%|███████   | 14/20 [01:37<00:41,  6.89s/it][A
+
+ 75%|███████▌  | 15/20 [01:44<00:34,  6.87s/it][A
+
+ 80%|████████  | 16/20 [01:50<00:27,  6.86s/it][A
+
+ 85%|████████▌ | 17/20 [01:57<00:20,  6.84s/it][A
+
+ 90%|█████████ | 18/20 [02:04<00:13,  6.83s/it][A
+
+ 95%|█████████▌| 19/20 [02:11<00:06,  6.84s/it][A
+
+100%|██████████| 20/20 [02:18<00:00,  6.84s/it][A
+100%|██████████| 20/20 [02:18<00:00,  6.91s/it]
+
+
+
+  5%|▌         | 1/20 [00:07<02:14,  7.09s/it][A
+
+ 10%|█         | 2/20 [00:14<02:06,  7.01s/it][A
+
+ 15%|█▌        | 3/20 [00:21<02:00,  7.06s/it][A
+
+ 20%|██        | 4/20 [00:28<01:52,  7.05s/it][A
+
+ 25%|██▌       | 5/20 [00:35<01:45,  7.01s/it][A
+
+ 30%|███       | 6/20 [00:42<01:38,  7.01s/it][A
+
+ 35%|███▌      | 7/20 [00:49<01:30,  6.98s/it][A
+
+ 40%|████      | 8/20 [00:54<01:17,  6.47s/it][A
+
+ 45%|████▌     | 9/20 [01:01<01:13,  6.67s/it][A
+
+ 50%|█████     | 10/20 [01:08<01:08,  6.80s/it][A
+... [trimmed 33760 progress lines] ...
+
+100%|██████████| 20/20 [01:41<00:00,  5.86s/it][A
+100%|██████████| 20/20 [01:41<00:00,  5.07s/it]
+
+
+
+  5%|▌         | 1/20 [00:04<01:20,  4.22s/it][A
+
+ 10%|█         | 2/20 [00:11<01:51,  6.18s/it][A
+
+ 15%|█▌        | 3/20 [00:19<01:55,  6.77s/it][A
+
+ 20%|██        | 4/20 [00:23<01:31,  5.74s/it][A
+
+ 25%|██▌       | 5/20 [00:27<01:15,  5.05s/it][A
+
+ 30%|███       | 6/20 [00:29<00:57,  4.11s/it][A
+
+ 35%|███▌      | 7/20 [00:36<01:06,  5.15s/it][A
+
+ 40%|████      | 8/20 [00:39<00:50,  4.22s/it][A
+
+ 45%|████▌     | 9/20 [00:43<00:46,  4.20s/it][A
+
+ 50%|█████     | 10/20 [00:50<00:51,  5.20s/it][A
+
+ 55%|█████▌    | 11/20 [00:56<00:49,  5.45s/it][A
+
+ 60%|██████    | 12/20 [01:04<00:48,  6.04s/it][A
+
+ 65%|██████▌   | 13/20 [01:10<00:43,  6.27s/it][A
+
+ 70%|███████   | 14/20 [01:15<00:34,  5.76s/it][A
+
+ 75%|███████▌  | 15/20 [01:22<00:31,  6.22s/it][A
+
+ 80%|████████  | 16/20 [01:25<00:21,  5.33s/it][A
+
+ 85%|████████▌ | 17/20 [01:29<00:14,  4.75s/it][A
+
+ 90%|█████████ | 18/20 [01:31<00:08,  4.01s/it][A
+
+ 95%|█████████▌| 19/20 [01:38<00:04,  4.97s/it][A
+
+100%|██████████| 20/20 [01:45<00:00,  5.61s/it][A
+100%|██████████| 20/20 [01:45<00:00,  5.30s/it]
+I1021 18:03:11.085258 132907761025152 abstract_checkpointer.py:35] orbax-checkpoint version: 0.12.8
+I1021 18:03:11.085989 132907761025152 pytree_checkpoint_handler.py:596] save_device_host_concurrent_bytes=None
+I1021 18:03:11.086920 132907761025152 base_pytree_checkpoint_handler.py:501] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x78e0be16c7a0>, enable_pinned_host_transfer=True, save_concurrent_bytes: 96000000000 (89.4 GiB), restore_concurrent_bytes: 96000000000 (89.4 GiB)
+I1021 18:03:11.087949 132907761025152 event_tracking.py:76] [process=0] [sync] Started save checkpoint @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.
+I1021 18:03:11.098895 132907761025152 atomicity.py:140] Creating tmp directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp
+I1021 18:03:11.116391 132907761025152 checkpoint.py:188] Wrote Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1792576991111663900, 'commit_timestamp_nsecs': None, 'custom_metadata': {}}, json={"item_handlers": null, "metrics": {}, "performance_metrics": {}, "init_timestamp_nsecs": 1792576991111663900, "commit_timestamp_nsecs": null, "custom_metadata": {}} to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp/_CHECKPOINT_METADATA
+I1021 18:03:11.119659 132907761025152 signaling_client.py:380] Using ThreadSafeKeyValueSignalingClient
+I1021 18:03:11.124039 132907761025152 jax_array_handlers.py:582] Scheduling D2H of 10 prioritized jax.Array.
+I1021 18:03:11.125328 132907761025152 replica_slices.py:425] Transferring arrays to host memory with options: use_replica_parallel=True, min_slice_bytes_for_replica_parallel=None, max_replicas_for_replica_parallel=None, enable_pinned_host_transfer=True
+I1021 18:03:11.142822 132907761025152 async_io_engine.py:155] [process=0][thread=MainThread] Initiated "orbax.checkpoint._src.serialization.jax_array_handlers.ArrayHandler".serialize. Time taken: 0.023408s
+I1021 18:03:11.145604 132907761025152 async_io_engine.py:226] MemoryRegulated: Peak usage: 0.000000 GiB
+I1021 18:03:11.146487 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/blocking_gbytes_per_sec: 112.131 MiB/s (total size: 3.2 MiB) (time elapsed: 0.028775691986083984 s) (global)
+I1021 18:03:11.147286 132907761025152 base_pytree_checkpoint_handler.py:757] [process=0][thread=MainThread] Initiated Pytree async_save. Time taken: 0.029592s (batch_requests_ready=0.001686s, total_serialization_initiated=0.026803s, others=0.001103s)
+I1021 18:03:11.147763 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.156311 132881514981056 array_metadata_store.py:203] [process=0][thread=array_type_handler] Wrote 10 array_metadata.ArrayMetadata to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp/array_metadatas/process_0
+I1021 18:03:11.253309 132881514981056 jax_array_handlers.py:273] [process=0] /jax/orbax/write/worker/io/requested throughput: 29.299 MiB/s (total gbytes: 3.2 MiB) (time elapsed: 0.11012816429138184 s) (per-host)
+I1021 18:03:11.254084 132881514981056 jax_array_handlers.py:364] [process=0] Raw /jax/orbax/write/worker/io/raw throughput: 27.325 MiB/s (total gbytes: 3.0 MiB) (time elapsed: 0.11012816429138184 s) (per-host)
+I1021 18:03:11.254694 132881514981056 jax_array_handlers.py:325] [process=0] Write ratio (logical/raw): 1.072 (3.2 MiB / 3.0 MiB), algo=zstd, level=1
+I1021 18:03:11.266916 132881447839424 base_pytree_checkpoint_handler.py:1265] [process=0][thread=write_metadata_after_commits] Commit + Array metadata written. Time taken: 0.120038s (commit=0.109068s, array_metadata_write=0.010970s)
+I1021 18:03:11.268328 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.269184 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=1] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.269700 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/gbytes_per_sec: 21.229 MiB/s (total size: 3.2 MiB) (time elapsed: 0.1519918441772461 s) (global)
+I1021 18:03:11.276778 132907761025152 checkpoint.py:228] Read Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1792576991111663900, 'commit_timestamp_nsecs': None, 'custom_metadata': {}} from /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp/_CHECKPOINT_METADATA
+I1021 18:03:11.280296 132907761025152 checkpoint.py:247] Updated Metadata={'item_handlers': 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler', 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1792576991111663900, 'commit_timestamp_nsecs': None, 'custom_metadata': {}} to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp/_CHECKPOINT_METADATA
+I1021 18:03:11.280863 132907761025152 event_tracking.py:171] [process=0] [sync] Finished blocking save in 0.19 seconds. Continuing save @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.
+I1021 18:03:11.289629 132907761025152 array_metadata_store.py:367] [process=0][thread=MainThread] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0.
+I1021 18:03:11.306887 132907761025152 ocdbt_utils.py:222] Merged 1 TensorStore OCDBT files under directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp in 0.02s.
+I1021 18:03:11.307639 132907761025152 base_pytree_checkpoint_handler.py:1393] [process=0][thread=MainThread] Pytree save finalize (merge_ocdbt + ArrayMetadata validation) completed. Time taken: 0.026025s. use_zarr3=False, enable_post_merge_validation=True, directory=/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp
+I1021 18:03:11.309028 132907761025152 atomicity.py:530] Renaming /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow.orbax-checkpoint-tmp to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow
+I1021 18:03:11.326587 132907761025152 atomicity.py:851] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow`.
+I1021 18:03:11.327607 132907761025152 event_tracking.py:184] [process=0] [sync] Finished save in 0.24 seconds @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_bc_flow
+I1021 18:03:11.328257 132907761025152 pytree_checkpoint_handler.py:596] save_device_host_concurrent_bytes=None
+I1021 18:03:11.328963 132907761025152 base_pytree_checkpoint_handler.py:501] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x78e0be16c7a0>, enable_pinned_host_transfer=True, save_concurrent_bytes: 96000000000 (89.4 GiB), restore_concurrent_bytes: 96000000000 (89.4 GiB)
+I1021 18:03:11.329635 132907761025152 event_tracking.py:76] [process=0] [sync] Started save checkpoint @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow.
+I1021 18:03:11.331757 132907761025152 atomicity.py:140] Creating tmp directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow.orbax-checkpoint-tmp
+I1021 18:03:11.340543 132907761025152 jax_array_handlers.py:582] Scheduling D2H of 10 prioritized jax.Array.
+I1021 18:03:11.341164 132907761025152 replica_slices.py:425] Transferring arrays to host memory with options: use_replica_parallel=True, min_slice_bytes_for_replica_parallel=None, max_replicas_for_replica_parallel=None, enable_pinned_host_transfer=True
+I1021 18:03:11.351240 132907761025152 async_io_engine.py:155] [process=0][thread=MainThread] Initiated "orbax.checkpoint._src.serialization.jax_array_handlers.ArrayHandler".serialize. Time taken: 0.010961s
+I1021 18:03:11.351876 132907761025152 async_io_engine.py:226] MemoryRegulated: Peak usage: 0.000000 GiB
+I1021 18:03:11.353093 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/blocking_gbytes_per_sec: 248.003 MiB/s (total size: 3.2 MiB) (time elapsed: 0.013002634048461914 s) (global)
+I1021 18:03:11.354283 132907761025152 base_pytree_checkpoint_handler.py:757] [process=0][thread=MainThread] Initiated Pytree async_save. Time taken: 0.014376s (batch_requests_ready=0.000345s, total_serialization_initiated=0.012195s, others=0.001836s)
+I1021 18:03:11.354831 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.358894 132881447839424 array_metadata_store.py:203] [process=0][thread=array_type_handler] Wrote 10 array_metadata.ArrayMetadata to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow.orbax-checkpoint-tmp/array_metadatas/process_0
+I1021 18:03:11.461857 132881447839424 jax_array_handlers.py:273] [process=0] /jax/orbax/write/worker/io/requested throughput: 28.570 MiB/s (total gbytes: 3.2 MiB) (time elapsed: 0.1128702163696289 s) (per-host)
+I1021 18:03:11.462531 132881447839424 jax_array_handlers.py:364] [process=0] Raw /jax/orbax/write/worker/io/raw throughput: 26.683 MiB/s (total gbytes: 3.0 MiB) (time elapsed: 0.1128702163696289 s) (per-host)
+I1021 18:03:11.463113 132881447839424 jax_array_handlers.py:325] [process=0] Write ratio (logical/raw): 1.071 (3.2 MiB / 3.0 MiB), algo=zstd, level=1
+I1021 18:03:11.475064 132881514981056 base_pytree_checkpoint_handler.py:1265] [process=0][thread=write_metadata_after_commits] Commit + Array metadata written. Time taken: 0.121185s (commit=0.110636s, array_metadata_write=0.010549s)
+I1021 18:03:11.476119 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.476628 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=2] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.477257 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/gbytes_per_sec: 23.481 MiB/s (total size: 3.2 MiB) (time elapsed: 0.13733410835266113 s) (global)
+I1021 18:03:11.486585 132907761025152 event_tracking.py:171] [process=0] [sync] Finished blocking save in 0.16 seconds. Continuing save @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow.
+I1021 18:03:11.495394 132907761025152 array_metadata_store.py:367] [process=0][thread=MainThread] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0.
+I1021 18:03:11.515761 132907761025152 ocdbt_utils.py:222] Merged 1 TensorStore OCDBT files under directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow.orbax-checkpoint-tmp in 0.03s.
+I1021 18:03:11.516488 132907761025152 base_pytree_checkpoint_handler.py:1393] [process=0][thread=MainThread] Pytree save finalize (merge_ocdbt + ArrayMetadata validation) completed. Time taken: 0.029123s. use_zarr3=False, enable_post_merge_validation=True, directory=/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow.orbax-checkpoint-tmp
+I1021 18:03:11.517541 132907761025152 atomicity.py:530] Renaming /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow.orbax-checkpoint-tmp to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow
+I1021 18:03:11.535809 132907761025152 atomicity.py:851] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow`.
+I1021 18:03:11.536668 132907761025152 event_tracking.py:184] [process=0] [sync] Finished save in 0.21 seconds @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/actor_onestep_flow
+I1021 18:03:11.537215 132907761025152 pytree_checkpoint_handler.py:596] save_device_host_concurrent_bytes=None
+I1021 18:03:11.537781 132907761025152 base_pytree_checkpoint_handler.py:501] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x78e0be16c7a0>, enable_pinned_host_transfer=True, save_concurrent_bytes: 96000000000 (89.4 GiB), restore_concurrent_bytes: 96000000000 (89.4 GiB)
+I1021 18:03:11.538560 132907761025152 event_tracking.py:76] [process=0] [sync] Started save checkpoint @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic.
+I1021 18:03:11.540890 132907761025152 atomicity.py:140] Creating tmp directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic.orbax-checkpoint-tmp
+I1021 18:03:11.549948 132907761025152 jax_array_handlers.py:582] Scheduling D2H of 18 prioritized jax.Array.
+I1021 18:03:11.550559 132907761025152 replica_slices.py:425] Transferring arrays to host memory with options: use_replica_parallel=True, min_slice_bytes_for_replica_parallel=None, max_replicas_for_replica_parallel=None, enable_pinned_host_transfer=True
+I1021 18:03:11.566675 132907761025152 async_io_engine.py:155] [process=0][thread=MainThread] Initiated "orbax.checkpoint._src.serialization.jax_array_handlers.ArrayHandler".serialize. Time taken: 0.017007s
+I1021 18:03:11.572709 132907761025152 async_io_engine.py:226] MemoryRegulated: Peak usage: 0.000000 GiB
+I1021 18:03:11.573769 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/blocking_gbytes_per_sec: 261.065 MiB/s (total size: 6.4 MiB) (time elapsed: 0.02452397346496582 s) (global)
+I1021 18:03:11.574442 132907761025152 base_pytree_checkpoint_handler.py:757] [process=0][thread=MainThread] Initiated Pytree async_save. Time taken: 0.025217s (batch_requests_ready=0.000425s, total_serialization_initiated=0.023694s, others=0.001098s)
+I1021 18:03:11.575183 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.581485 132881431054016 array_metadata_store.py:203] [process=0][thread=array_type_handler] Wrote 18 array_metadata.ArrayMetadata to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic.orbax-checkpoint-tmp/array_metadatas/process_0
+I1021 18:03:11.691522 132881431054016 jax_array_handlers.py:273] [process=0] /jax/orbax/write/worker/io/requested throughput: 51.419 MiB/s (total gbytes: 6.4 MiB) (time elapsed: 0.12451291084289551 s) (per-host)
+I1021 18:03:11.692240 132881431054016 jax_array_handlers.py:364] [process=0] Raw /jax/orbax/write/worker/io/raw throughput: 47.697 MiB/s (total gbytes: 5.9 MiB) (time elapsed: 0.12451291084289551 s) (per-host)
+I1021 18:03:11.692782 132881431054016 jax_array_handlers.py:325] [process=0] Write ratio (logical/raw): 1.078 (6.4 MiB / 5.9 MiB), algo=zstd, level=1
+I1021 18:03:11.704344 132881514981056 base_pytree_checkpoint_handler.py:1265] [process=0][thread=write_metadata_after_commits] Commit + Array metadata written. Time taken: 0.130363s (commit=0.120325s, array_metadata_write=0.010037s)
+I1021 18:03:11.705420 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.705909 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=3] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.706460 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/gbytes_per_sec: 40.722 MiB/s (total size: 6.4 MiB) (time elapsed: 0.15722203254699707 s) (global)
+I1021 18:03:11.716246 132907761025152 event_tracking.py:171] [process=0] [sync] Finished blocking save in 0.18 seconds. Continuing save @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic.
+I1021 18:03:11.725255 132907761025152 array_metadata_store.py:367] [process=0][thread=MainThread] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0.
+I1021 18:03:11.744079 132907761025152 ocdbt_utils.py:222] Merged 1 TensorStore OCDBT files under directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic.orbax-checkpoint-tmp in 0.03s.
+I1021 18:03:11.744929 132907761025152 base_pytree_checkpoint_handler.py:1393] [process=0][thread=MainThread] Pytree save finalize (merge_ocdbt + ArrayMetadata validation) completed. Time taken: 0.027821s. use_zarr3=False, enable_post_merge_validation=True, directory=/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic.orbax-checkpoint-tmp
+I1021 18:03:11.746011 132907761025152 atomicity.py:530] Renaming /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic.orbax-checkpoint-tmp to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic
+I1021 18:03:11.762109 132907761025152 atomicity.py:851] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic`.
+I1021 18:03:11.762911 132907761025152 event_tracking.py:184] [process=0] [sync] Finished save in 0.22 seconds @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/critic
+I1021 18:03:11.763539 132907761025152 pytree_checkpoint_handler.py:596] save_device_host_concurrent_bytes=None
+I1021 18:03:11.764099 132907761025152 base_pytree_checkpoint_handler.py:501] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x78e0be16c7a0>, enable_pinned_host_transfer=True, save_concurrent_bytes: 96000000000 (89.4 GiB), restore_concurrent_bytes: 96000000000 (89.4 GiB)
+I1021 18:03:11.764711 132907761025152 event_tracking.py:76] [process=0] [sync] Started save checkpoint @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic.
+I1021 18:03:11.766753 132907761025152 atomicity.py:140] Creating tmp directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic.orbax-checkpoint-tmp
+I1021 18:03:11.775274 132907761025152 jax_array_handlers.py:582] Scheduling D2H of 18 prioritized jax.Array.
+I1021 18:03:11.775852 132907761025152 replica_slices.py:425] Transferring arrays to host memory with options: use_replica_parallel=True, min_slice_bytes_for_replica_parallel=None, max_replicas_for_replica_parallel=None, enable_pinned_host_transfer=True
+I1021 18:03:11.787675 132907761025152 async_io_engine.py:155] [process=0][thread=MainThread] Initiated "orbax.checkpoint._src.serialization.jax_array_handlers.ArrayHandler".serialize. Time taken: 0.012678s
+I1021 18:03:11.793065 132907761025152 async_io_engine.py:226] MemoryRegulated: Peak usage: 0.000000 GiB
+I1021 18:03:11.794345 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/blocking_gbytes_per_sec: 323.457 MiB/s (total size: 6.4 MiB) (time elapsed: 0.01979351043701172 s) (global)
+I1021 18:03:11.795209 132907761025152 base_pytree_checkpoint_handler.py:757] [process=0][thread=MainThread] Initiated Pytree async_save. Time taken: 0.020680s (batch_requests_ready=0.000434s, total_serialization_initiated=0.018968s, others=0.001277s)
+I1021 18:03:11.795690 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.802312 132881514981056 array_metadata_store.py:203] [process=0][thread=array_type_handler] Wrote 18 array_metadata.ArrayMetadata to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic.orbax-checkpoint-tmp/array_metadatas/process_0
+I1021 18:03:11.916782 132881514981056 jax_array_handlers.py:273] [process=0] /jax/orbax/write/worker/io/requested throughput: 49.711 MiB/s (total gbytes: 6.4 MiB) (time elapsed: 0.12879133224487305 s) (per-host)
+I1021 18:03:11.917482 132881514981056 jax_array_handlers.py:364] [process=0] Raw /jax/orbax/write/worker/io/raw throughput: 46.128 MiB/s (total gbytes: 5.9 MiB) (time elapsed: 0.12879133224487305 s) (per-host)
+I1021 18:03:11.918021 132881514981056 jax_array_handlers.py:325] [process=0] Write ratio (logical/raw): 1.078 (6.4 MiB / 5.9 MiB), algo=zstd, level=1
+I1021 18:03:11.930593 132881431054016 base_pytree_checkpoint_handler.py:1265] [process=0][thread=write_metadata_after_commits] Commit + Array metadata written. Time taken: 0.135756s (commit=0.124628s, array_metadata_write=0.011128s)
+I1021 18:03:11.931682 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.932156 132907761025152 future.py:411] [process=0][thread=MainThread][operation_id=4] _SignalingThread.join() waiting for signals ([]) blocking the main thread will slow down blocking save times. This is likely due to main thread calling result() on a CommitFuture.
+I1021 18:03:11.932667 132907761025152 async_io_engine.py:127] [process=0] /jax/orbax/write/gbytes_per_sec: 40.490 MiB/s (total size: 6.4 MiB) (time elapsed: 0.15812039375305176 s) (global)
+I1021 18:03:11.941927 132907761025152 event_tracking.py:171] [process=0] [sync] Finished blocking save in 0.18 seconds. Continuing save @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic.
+I1021 18:03:11.950289 132907761025152 array_metadata_store.py:367] [process=0][thread=MainThread] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0.
+I1021 18:03:11.970013 132907761025152 ocdbt_utils.py:222] Merged 1 TensorStore OCDBT files under directory /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic.orbax-checkpoint-tmp in 0.03s.
+I1021 18:03:11.970744 132907761025152 base_pytree_checkpoint_handler.py:1393] [process=0][thread=MainThread] Pytree save finalize (merge_ocdbt + ArrayMetadata validation) completed. Time taken: 0.028026s. use_zarr3=False, enable_post_merge_validation=True, directory=/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic.orbax-checkpoint-tmp
+I1021 18:03:11.971878 132907761025152 atomicity.py:530] Renaming /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic.orbax-checkpoint-tmp to /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic
+I1021 18:03:11.989853 132907761025152 atomicity.py:851] [process=0][thread=MainThread] Finished saving checkpoint (finalized tmp dir) to `/mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic`.
+I1021 18:03:11.990899 132907761025152 event_tracking.py:184] [process=0] [sync] Finished save in 0.23 seconds @ /mnt/e/FINO/gpu_exp/FINO/humanoidmaze-medium-navigate-singletask-v0/0/1000000/target_critic
+
+
+
+
+  5%|▌         | 1/20 [00:06<02:07,  6.72s/it][A
+
+ 10%|█         | 2/20 [00:10<01:27,  4.85s/it][A
+
+ 15%|█▌        | 3/20 [00:15<01:22,  4.85s/it][A
+
+ 20%|██        | 4/20 [00:18<01:07,  4.20s/it][A
+
+ 25%|██▌       | 5/20 [00:20<00:50,  3.38s/it][A
+
+ 30%|███       | 6/20 [00:23<00:47,  3.36s/it][A
+
+ 35%|███▌      | 7/20 [00:30<00:59,  4.57s/it][A
+
+ 40%|████      | 8/20 [00:34<00:52,  4.35s/it][A
+
+ 45%|████▌     | 9/20 [00:36<00:41,  3.75s/it][A
+
+ 50%|█████     | 10/20 [00:42<00:44,  4.42s/it][A
+
+ 55%|█████▌    | 11/20 [00:47<00:39,  4.43s/it][A
+
+ 60%|██████    | 12/20 [00:53<00:40,  5.05s/it][A
+
+ 65%|██████▌   | 13/20 [00:58<00:34,  4.91s/it][A
+
+ 70%|███████   | 14/20 [01:00<00:24,  4.06s/it][A
+
+ 75%|███████▌  | 15/20 [01:04<00:20,  4.07s/it][A
+
+ 80%|████████  | 16/20 [01:08<00:15,  3.89s/it][A
+
+ 85%|████████▌ | 17/20 [01:11<00:11,  3.78s/it][A
+
+ 90%|█████████ | 18/20 [01:17<00:08,  4.32s/it][A
+
+ 95%|█████████▌| 19/20 [01:22<00:04,  4.71s/it][A
+
+100%|██████████| 20/20 [01:26<00:00,  4.55s/it][A
+100%|██████████| 20/20 [01:26<00:00,  4.35s/it]
+
