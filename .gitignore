@@ -1,0 +1,27 @@
+# ---- Python 环境 ----
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- 编辑器 / IDE ----
+.idea/
+.vscode/
+
+# ---- 官方源码备份（与 FINO/ 重复，仅本地用于 diff）----
+_extract/
+
+# ---- 实验产物：只保留 CSV/flags，排除二进制 checkpoint（8000 / 30000 步）----
+exp/**/8000/
+exp/**/30000/
+FINO/wandb/
+FINO/exp/
+FINO/exp_restore/
+
+# ---- 其他 ----
+Thumbs.db
+.DS_Store
+*.log.part
+*.tmp

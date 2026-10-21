@@ -1,0 +1,146 @@
+{
+  "config": {
+    "seed": 100,
+    "teacher_steps": 3000,
+    "distill_steps": 3000,
+    "flow_steps": 10,
+    "n_eval": 2048
+  },
+  "teacher": {
+    "emd": 0.03147502922077927,
+    "mmd": 0.014249753801098053,
+    "mode_entropy": 1.386259096911687,
+    "mode_entropy_real": 1.384979008660674,
+    "mode_kl": 0.0016142395302935833,
+    "mode_max_frac": 0.2529296875
+  },
+  "student": {
+    "emd": 0.03231712455466007,
+    "mmd": 0.01499132163293293,
+    "mode_entropy": 1.386244678999943,
+    "mode_entropy_real": 1.384979008660674,
+    "mode_kl": 0.0017752640702048666,
+    "mode_max_frac": 0.2529296875
+  },
+  "student_vs_teacher": {
+    "emd": 0.0003932104874166953,
+    "mmd": 6.399856311645191e-05,
+    "mode_entropy": 1.386244678999943,
+    "mode_entropy_real": 1.386259096911687,
+    "mode_kl": 8.650802940191786e-06,
+    "mode_max_frac": 0.2529296875
+  },
+  "one_vs_teacher_mse": 0.0018353399354964495,
+  "per_dim_mse": [
+    0.00026021560188382864,
+    0.003410464385524392
+  ],
+  "timing": {
+    "n": 4096,
+    "one_step_ms": 1.442299981135875,
+    "one_step_ms_per_sample": 0.00035212401883200073,
+    "teacher10_ms": 7.7664999989792705,
+    "teacher10_ms_per_sample": 0.0018961181638132985,
+    "speedup": 5.384802121998788
+  },
+  "alpha_sweep": {
+    "rows": [
+      {
+        "alpha": 1.0,
+        "distill_mse_to_teacher": 0.7580206990242004,
+        "mean_q": 2.926326274871826,
+        "emd_to_teacher": 0.9562380151647865,
+        "emd_to_data": 0.9111811962049523,
+        "mode_entropy": -0.0,
+        "mode_max_frac": 1.0
+      },
+      {
+        "alpha": 10.0,
+        "distill_mse_to_teacher": 0.23845267295837402,
+        "mean_q": 0.753420352935791,
+        "emd_to_teacher": 0.32106769135863944,
+        "emd_to_data": 0.36574556908592437,
+        "mode_entropy": 0.8789859534670672,
+        "mode_max_frac": 0.6982421875
+      },
+      {
+        "alpha": 100.0,
+        "distill_mse_to_teacher": 0.01978689432144165,
+        "mean_q": -4.436727523803711,
+        "emd_to_teacher": 0.015151452850287628,
+        "emd_to_data": 0.05672932251399221,
+        "mode_entropy": 1.3807168166203687,
+        "mode_max_frac": 0.28857421875
+      },
+      {
+        "alpha": 1000.0,
+        "distill_mse_to_teacher": 0.01194392703473568,
+        "mean_q": -5.825163841247559,
+        "emd_to_teacher": 0.003612810016044188,
+        "emd_to_data": 0.039005684783175454,
+        "mode_entropy": 1.3859935142645352,
+        "mode_max_frac": 0.255859375
+      }
+    ],
+    "teacher_mean_q": -6.111693859100342,
+    "note": "alpha 为 distill_loss 权重；此处 loss = alpha*distill + q_toy_loss"
+  },
+  "flow_steps_sensitivity": [
+    {
+      "flow_steps": 1,
+      "emd_to_data": 0.32095079348093236,
+      "mmd_to_data": 0.2759376738712117,
+      "mode_entropy": 1.3857416198413173,
+      "mode_kl": 0.0021648196951849826,
+      "emd_to_teacher10": 0.2916874640288605,
+      "ms": 0.7008499815128744
+    },
+    {
+      "flow_steps": 2,
+      "emd_to_data": 0.16983217822390628,
+      "mmd_to_data": 0.17002510397704496,
+      "mode_entropy": 1.3845369901763525,
+      "mode_kl": 0.004093691222877338,
+      "emd_to_teacher10": 0.08395032737329022,
+      "ms": 1.1759499902836978
+    },
+    {
+      "flow_steps": 5,
+      "emd_to_data": 0.04779897645787412,
+      "mmd_to_data": 0.029661318892655553,
+      "mode_entropy": 1.3862297763298845,
+      "mode_kl": 0.0017481069263938862,
+      "emd_to_teacher10": 0.0036600546783001064,
+      "ms": 2.3432000016327947
+    },
+    {
+      "flow_steps": 10,
+      "emd_to_data": 0.03147502922077927,
+      "mmd_to_data": 0.014249753801098053,
+      "mode_entropy": 1.386259096911687,
+      "mode_kl": 0.0016142395302935833,
+      "emd_to_teacher10": 0.0,
+      "ms": 4.173999972408637
+    },
+    {
+      "flow_steps": 20,
+      "emd_to_data": 0.026221855849582587,
+      "mmd_to_data": 0.009625833988765597,
+      "mode_entropy": 1.3862363410796015,
+      "mode_kl": 0.0016300032548414011,
+      "emd_to_teacher10": 0.0008157453758652622,
+      "ms": 8.407899993471801
+    },
+    {
+      "flow_steps": 50,
+      "emd_to_data": 0.02384886197963132,
+      "mmd_to_data": 0.007614708146509441,
+      "mode_entropy": 1.386248702575799,
+      "mode_kl": 0.0016033673295739199,
+      "emd_to_teacher10": 0.0019516179550540524,
+      "ms": 21.85210000607185
+    }
+  ],
+  "teacher_final_loss": 0.9977892637252808,
+  "distill_final_loss": 0.0022311252541840076
+}

@@ -1,0 +1,50 @@
+--- a/main.py
++++ b/main.py
+@@ -19,7 +19,9 @@
+ from utils.flax_utils import restore_agent, save_agent
+ from utils.log_utils import CsvLogger, get_exp_name, get_flag_dict, get_wandb_video, setup_wandb
+ 
+-os.environ["MUJOCO_GL"] = "egl"
++# [FINO-Windows-CPU patch] `egl` is unavailable on native Windows; only set it on other platforms.
++if platform.system() != 'Windows':
++    os.environ["MUJOCO_GL"] = "egl"
+ 
+ FLAGS = flags.FLAGS
+ 
+--- a/utils/log_utils.py
++++ b/utils/log_utils.py
+@@ -65,7 +65,8 @@
+     group=None,
+     job_type=None,
+     name=None,
+-    mode='online',
++    # [FINO-Windows-CPU patch] Default to offline wandb logging (no account/network needed).
++    mode=os.environ.get('FINO_WANDB_MODE', 'offline'),
+ ):
+     """Set up Weights & Biases for logging."""
+     wandb_output_dir = tempfile.mkdtemp()
+@@ -80,10 +81,8 @@
+         job_type=job_type,
+         dir=wandb_output_dir,
+         name=name,
+-        settings=wandb.Settings(
+-            start_method='thread',
+-            _disable_stats=False,
+-        ),
++        # [FINO-Windows-CPU patch] `start_method` was removed from wandb.Settings in newer wandb.
++        settings=wandb.Settings(_disable_stats=False),
+         mode=mode,
+         save_code=True,
+     )
+--- a/utils/evaluation.py
++++ b/utils/evaluation.py
+@@ -57,7 +57,8 @@
+     Returns:
+         A tuple containing the statistics, trajectories, and rendered videos.
+     """
+-    actor_fn = supply_rng(agent.sample_actions, rng=jax.random.PRNGKey(np.random.randint(0, 2**32)))
++    # [FINO-Windows-CPU patch] np.random.randint's upper bound overflows int32 on Windows; 2**31-1 is safe.
++    actor_fn = supply_rng(agent.sample_actions, rng=jax.random.PRNGKey(np.random.randint(0, 2**31 - 1)))
+     trajs = []
+     stats = defaultdict(list)
+ 
