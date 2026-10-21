@@ -1,0 +1,22 @@
+{
+  "FINO": {
+    "n_states": 256,
+    "energy_distance_one_step_vs_teacher": 0.00613,
+    "mse_one_step_vs_teacher": 0.048025,
+    "mse_one_step_vs_dataset_action": 0.090073,
+    "mse_teacher_vs_dataset_action": 0.059527,
+    "mean_q_argmax_policy": -92.1071,
+    "one_step_latency_ms_N256": 13.38,
+    "teacher_10step_latency_ms_N256x8": 1983.73
+  },
+  "FQL": {
+    "n_states": 256,
+    "energy_distance_one_step_vs_teacher": 0.005541,
+    "mse_one_step_vs_teacher": 0.04947,
+    "mse_one_step_vs_dataset_action": 0.090403,
+    "mse_teacher_vs_dataset_action": 0.060195,
+    "mean_q_argmax_policy": -91.9933,
+    "one_step_latency_ms_N256": 13.28,
+    "teacher_10step_latency_ms_N256x8": 340.83
+  }
+}

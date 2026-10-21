@@ -1,0 +1,6 @@
+# GPU 全预算复现结果汇总（1M 离线 + 500k 在线）
+
+| agent | env | run_dir | offline_steps | updates_logged | total_minutes | ms_per_update | eval_points | success_peak | success_at_1M | success_final | return_at_1M | return_final | bc_flow_last | critic_loss_last | q_last |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| FINO | antmaze-large-navigate-singletask-v0 | E:\FINO\gpu_exp\FINO\antmaze-large-navigate-singletask-v0\0 | 1500000 | 300 | 150.3 | 6.01 | 31 | 1.0 | 0.82 | 1.0 | -714.58 | -383.4 | 0.2846 | 0.2116 | -90.69 |
+| FQL | antmaze-large-navigate-singletask-v0 | E:\FINO\gpu_exp\FQL\antmaze-large-navigate-singletask-v0\0 | 1500000 | 300 | 136.6 | 5.47 | 31 | 0.98 | 0.78 | 0.92 | -727.3 | -517.86 | 0.279 | 0.0924 | -92.64 |

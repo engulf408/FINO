@@ -1,6 +1,9 @@
 from typing import Any, Optional, Sequence
 
-import distrax
+try:  # [FINO-WSL-PATCH] optional distrax: jax>=0.12 removed jax.interpreters.xla.pytype_aval_mappings used by distrax 0.1.5
+    import distrax
+except Exception:  # pragma: no cover
+    distrax = None
 import flax.linen as nn
 import jax.numpy as jnp
 
@@ -71,11 +74,20 @@ class LogParam(nn.Module):
         return jnp.exp(log_value)
 
 
-class TransformedWithMode(distrax.Transformed):
-    """Transformed distribution with mode calculation."""
+if distrax is not None:
+    class TransformedWithMode(distrax.Transformed):
+        """Transformed distribution with mode calculation."""
 
-    def mode(self):
-        return self.bijector.forward(self.distribution.mode())
+        def mode(self):
+            return self.bijector.forward(self.distribution.mode())
+else:  # pragma: no cover - FINO/FQL do not use the Gaussian Actor
+    class TransformedWithMode:
+        """Placeholder used when distrax is unavailable (new JAX versions)."""
+
+        def __init__(self, *args, **kwargs):
+            raise RuntimeError(
+                'distrax is unavailable with this JAX version; the Gaussian Actor is not used by FINO/FQL.'
+            )
 
 
 class Actor(nn.Module):

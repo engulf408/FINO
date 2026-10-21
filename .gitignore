@@ -25,3 +25,15 @@ Thumbs.db
 .DS_Store
 *.log.part
 *.tmp
+
+# GPU è¿è¡Œï¼šä¿ç•™ CSV/flagsï¼Œæ’é™¤äºŒè¿›åˆ¶ checkpoint
+gpu_exp/**/1000000/
+ppt/.dsh-office-*/
+
+# ´óÎÄ¼ş/¶ş½øÖÆ£¨²»Èë¿â£©
+wsl_setup/*.tar.gz
+wsl_setup/*.msi
+exp/**/8000/
+exp/**/30000/
+gpu_exp/**/1000000/
+
