@@ -848,7 +848,7 @@ card(s, 6.45, 1.52, 6.18, 3.3)
 text(s, 6.7, 1.66, 5.7, 0.3, '本复现实际覆盖（截至 10-21 18:20）', size=10.5, bold=True, color=NAVY)
 add_table(s, 6.7, 2.02, 5.7, [0.44, 0.18, 0.38],
           ['类别', '完成', '覆盖率 / 备注'],
-          [('OGBench FINO（全预算）', '1 + 2 进行中', '1/35；含进行中 ≈ 8.6%'),
+          [('OGBench FINO（全预算）', '3', '3/35 ≈ 8.6%'),
            ('OGBench FQL（全预算）', '1', '1/35 ≈ 2.9%（antmaze-large）'),
            ('D4RL', '0', '0%（mujoco-py 未覆盖）'),
            ('论文消融', '机制级', '2D 玩具验证，非论文环境'),
@@ -858,8 +858,8 @@ card(s, 0.7, 5.0, 11.93, 1.55, fill=GREEN_L, line_color=RGBColor(0xC9, 0xE4, 0xD
 text(s, 0.95, 5.13, 11.4, 0.3, '已完成的核心结果 & 差距', size=10.5, bold=True, color=GREEN)
 bullet_list(s, 0.95, 5.48, 11.35, 1.0, [
     {'t': 'antmaze-large 全预算 FINO 100% vs FQL 92%（31 评估点 × 50 episodes）——论文主表同任务、同协议', 'bc': GREEN},
-    {'t': 'cube-double-play / humanoidmaze-medium 已跑 ~75%（FINO），预计 19:10 前后完成', 'bc': GREEN},
-    {'t': '差距：45 任务中完整覆盖 1 个（≈2.2%）；补 3–5 任务 + 多 seed + 消融约需 50–100 GPU 小时，全量约 400–900 GPU 小时', 'bc': AMBER_D},
+    {'t': '扩展任务已完成：cube-double-play 72%（峰值 92%）、humanoidmaze-medium 100%（FINO，全预算）', 'bc': GREEN},
+    {'t': '差距：45 任务中 FINO 覆盖 3 个（≈6.7%，含进行中 8.6%）；补 3–5 任务 + 多 seed + 消融约需 50–100 GPU 小时，全量约 400–900 GPU 小时', 'bc': AMBER_D},
 ], size=8.8, gap=2)
 add_footer(s, 18)
 note(s, '覆盖度盘点：论文 45 个任务中，本复现完整完成 1 个任务的主对比（FINO+FQL），另有 2 个 OGBench 任务接近完成，'
@@ -871,7 +871,7 @@ add_header(s, '05 · 结论', '结论：代码级、机制级、数值级复现�
 cards = [
     ('✅ 代码级复现', '官方实现全链路可运行：训练、在线微调、评估、熵自适应 β、checkpoint；5 处平台补丁，算法零改动。', GREEN, GREEN_L),
     ('✅ 机制级复现', '2D 玩具定量验证三大机制：蒸馏 5.38× 且保真、Q-guided 在 d≥4 有效、噪声注入方向正确。', GREEN, GREEN_L),
-    ('✅ 数值级复现', 'antmaze-large 全预算：FINO 100% vs FQL 92%；单任务 2.3–2.5 h（GPU），方向与论文一致。', GREEN, GREEN_L),
+    ('✅ 数值级复现', '3 个 OGBench 任务全预算：antmaze-large 100%、humanoidmaze-medium 100%、cube-double-play 72%（FQL 对比 92%）。', GREEN, GREEN_L),
 ]
 cw3 = (CW - 0.25 * 2) / 3
 for i, (t, d, c, bg) in enumerate(cards):
@@ -886,7 +886,7 @@ bullet_list(s, 0.95, 4.02, 5.4, 2.3, [
     {'t': 'docs/02 复现报告（506 行）：CPU + GPU 全预算结果、偏差、复现路径'},
     {'t': 'docs/01 源码分析（724 行）与 docs/patches.diff（5 处）'},
     {'t': 'experiments/toy：4 组机制实验 + 8 张图 + RESULTS.md'},
-    {'t': 'gpu_exp/：全预算 FINO/FQL 的 CSV、flags、1M 步 checkpoint'},
+    {'t': 'gpu_exp/：4 条全预算运行（FINO×3、FQL×1）的 CSV/flags/checkpoint'},
     {'t': 'results/：CPU/GPU 曲线、gpu_summary、checkpoint 分析'},
 ], size=9.2, gap=3)
 card(s, 6.78, 3.55, 5.85, 2.95, fill=CARD2)
@@ -905,6 +905,34 @@ rich(s, 0.7, 6.62, 11.9, 0.3,
 add_footer(s, 19)
 note(s, '结论升级为"三层全部完成"：代码级、机制级、数值级（antmaze-large 全预算 100% vs 92%）。'
         '交付物包含全部数据与脚本；扩展任务正在运行。')
+# ================================================================ 20 extended results
+s = prs.slides.add_slide(BLANK)
+add_header(s, '05 · 扩展结果', '扩展任务：FINO 在 3 个 OGBench 任务上的全预算表现', 20)
+add_image(s, os.path.join(RES, 'fig_gpu_extended_curves.png'), 0.7, 1.45, 7.3, 2.45)
+card(s, 8.2, 1.45, 4.43, 2.45, fill=GREEN_L, line_color=RGBColor(0xC9, 0xE4, 0xD3))
+text(s, 8.45, 1.58, 4.0, 0.3, '关键数字', size=10.5, bold=True, color=GREEN)
+bullet_list(s, 8.45, 1.92, 4.0, 1.85, [
+    {'t': 'antmaze-large：100%（FQL 92%）', 'bc': GREEN},
+    {'t': 'humanoidmaze-medium：100%（峰值 100%）', 'bc': GREEN},
+    {'t': 'cube-double-play：72%（峰值 92%，最后 5 次均值 84%）', 'bc': GREEN},
+    {'t': '3 个任务全部在论文预算下完成（1M 离线 + 500k 在线）', 'bc': GREEN},
+], size=8.8, gap=2)
+card(s, 0.7, 4.05, 11.93, 2.75)
+text(s, 0.95, 4.16, 11.4, 0.28, '全预算结果汇总（FINO vs FQL；每任务 1.5M 步）', size=10.5, bold=True, color=NAVY)
+add_table(s, 0.95, 4.5, 11.35, [0.26, 0.10, 0.14, 0.12, 0.16, 0.22],
+          ['任务', 'agent', '最终 success', '峰值', '最后 5 次均值', '耗时 / 评估协议'],
+          [('antmaze-large', 'FINO', '1.00', '1.00', '0.98', '150.3 min / 31×50 eps'),
+           ('humanoidmaze-medium', 'FINO', '1.00', '1.00', '0.96', '127.4 min / 16×20 eps*'),
+           ('cube-double-play', 'FINO', '0.72', '0.92', '0.84', '144.2 min / 31×50 eps')],
+          font_size=8.2, header_size=8.0, row_h=0.3)
+text(s, 0.95, 6.18, 11.4, 0.45,
+     '* humanoidmaze-medium 采用每 100k 步 × 20 episodes；其余按论文协议（50k × 50）。FQL 参考：antmaze-large 92%（峰值 98%）。全部 seed=0。',
+     size=7.6, color=GRAY)
+add_footer(s, 20)
+note(s, '扩展任务结果：FINO 在 humanoidmaze-medium 与 antmaze-large 都达到 100%，cube-double-play 72%（峰值 92%）；'
+        '与 antmaze 的 FQL 对比一起，构成 3 个 OGBench 任务的全预算证据。')
+
+
 # ================================================================ 19 thanks
 s = prs.slides.add_slide(BLANK)
 rect(s, 0, 0, SW, SH, fill=NAVY)

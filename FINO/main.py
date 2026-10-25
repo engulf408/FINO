@@ -224,6 +224,13 @@ def main(_):
                 eval_metrics['evaluation/entropy'] = entropy
                 if hasattr(agent, 'beta'):
                     eval_metrics['evaluation/beta'] = agent.beta
+                    # [ablation patch] persist beta/entropy (CsvLogger header is fixed)
+                    _bf = os.path.join(FLAGS.save_dir, 'beta.csv')
+                    _write_header = not os.path.exists(_bf)
+                    with open(_bf, 'a', encoding='utf-8') as _f:
+                        if _write_header:
+                            _f.write('step,beta,entropy\n')
+                        _f.write(f'{i},{float(agent.beta)},{float(entropy)}\n')
 
             wandb.log(eval_metrics, step=i)
             eval_logger.log(eval_metrics, step=i)

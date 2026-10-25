@@ -14,7 +14,7 @@
 2. **GPU 环境已打通，并完成论文级全预算复现（2026-10-21 更新）**：用户授权管理员权限后安装 WSL2 + Ubuntu 24.04，JAX 0.12.0(CUDA) 在 RTX 5070 上可用；按论文预算（1M 离线 + 500k 在线、每 50k×50 episodes）复现 antmaze-large，**FINO 最终成功率 100%（1.00），FQL 92%（0.92）**，单任务 2.5/2.3 小时。此前 CPU 阶段的限制与 3% 预算运行保留在 §2/§7.2b 作为历史记录。
 3. **交付内容**（CPU 阶段 + GPU 阶段）：
    - 端到端冒烟实验（pointmaze-medium，8k 离线 + 4k 在线，12k 步，15.5 分钟）验证了训练/评估/日志/checkpoint 全链路；
-    - 论文任务 antmaze-large 先做 3% 预算 CPU 运行（§7.2b），后完成 **全预算 GPU 运行**（§7.2，核心结果）；扩展任务 humanoidmaze-medium / cube-double-play 正在 GPU 上运行；
+    - 论文任务 antmaze-large 先做 3% 预算 CPU 运行（§7.2b），后完成 **全预算 GPU 运行**（§7.2，核心结果）；扩展任务 humanoidmaze-medium 与 cube-double-play 也已完成全预算运行（100% / 72%）；
    - 2D 玩具实验定量验证了 FINO 的三个核心机制（带噪 flow matching、一步蒸馏、Q-guided 采样 + 熵自适应 β），并发现两个值得作者注意的细节（见 §7.3）。
 4. **发现并修正了 5 个平台/依赖兼容问题**（4 个 Windows/CPU + 1 个 GPU 栈 distrax 兼容）（`MUJOCO_GL=egl`、wandb 在线模式、新版 `wandb.Settings.start_method` 已被删除、`np.random.randint(0, 2**32)` 在 Windows 上 int32 溢出）。改动见 `docs/patches.diff`，均为最小侵入，不改算法逻辑。
 5. 附带对源码的静态审计发现若干与论文表述不一致或潜在的实现问题（噪声注入时间表、β 更新符号、`to_eval` 的 batch>1 argmax、CsvLogger 丢列等），见 §8，供作者与后续复现者参考。
@@ -407,6 +407,26 @@ E:\FINO\.venv\Scripts\python.exe main.py --agent=agents/fql.py --env_name=antmaz
 | OGBench 默认 7 任务 | ≈ 7.8 天 | **约 17–20 小时** |
 | README 全量 45（OGBench）+10（D4RL） | ≈ 55 天 | **5–9 天**（单卡） |
 
+### 7.5 扩展任务结果（GPU 全预算，2026-10-21）
+
+在 antmaze-large 之外，又用同一套 GPU 环境按论文预算跑了 2 个 OGBench 默认任务（FINO）：
+
+| 任务 | agent | 最终 success | 峰值 | 最后 5 次均值 | 耗时 / 评估协议 |
+|---|---|---:|---:|---:|---|
+| antmaze-large | FINO | **1.00** | 1.00 | 0.98 | 150.3 min / 31×50 eps |
+| humanoidmaze-medium | FINO | **1.00** | 1.00 | 0.96 | 127.4 min / 16×20 eps\* |
+| cube-double-play | FINO | **0.72** | 0.92 | 0.84 | 144.2 min / 31×50 eps |
+| antmaze-large（参考） | FQL | 0.92 | 0.98 | 0.88 | 136.6 min / 31×50 eps |
+
+\* humanoidmaze-medium 为节省时间采用每 100k 步 × 20 episodes；其余按论文协议（每 50k 步 × 50 episodes）。
+
+![三个任务的评估曲线](../results/fig_gpu_extended_curves.png)
+
+**结论**：FINO 在 3 个 OGBench 任务上均学到有效策略（antmaze-large 与 humanoidmaze-medium 达到 100%，
+cube-double-play 72%/峰值 92%）；其中 antmaze-large 与 FQL 的同预算对比方向与论文一致（100% vs 92%）。
+全部为单 seed（seed=0），只用于方向性验证，不作显著性结论。
+
+
 ---
 
 ## 8. 与论文的差异、实现审计与已知问题
@@ -492,7 +512,7 @@ E:\FINO\.venv\Scripts\python.exe main.py --agent=agents/fql.py --env_name=antmaz
 | `exp/FINO/...` | CPU 阶段各运行的 `train.csv/eval.csv/flags.json/checkpoint` |
 | `gpu_exp/FINO/...`、`gpu_exp/FQL/...` | **全预算 GPU 运行**：train.csv/eval.csv/flags.json/checkpoint(1M) |
 | `wsl_setup/` | WSL2 安装与运行脚本（install/finish/setup1-5/launch_gpu_runs/launch_batch2） |
-| `results/` | CPU/GPU 训练评估曲线、`summary.csv`、`summary.md`、`gpu_summary.csv`、`checkpoint_analysis*.json` |
+| `results/` | CPU/GPU 训练评估曲线、`summary*`、`gpu_summary*`、`extended_summary*`、`checkpoint_analysis*.json` |
 | `logs/` | 安装、下载、训练、恢复测试、GPU 运行与下载的完整日志 |
 
 ---
@@ -506,7 +526,7 @@ E:\FINO\.venv\Scripts\python.exe main.py --agent=agents/fql.py --env_name=antmaz
 
 | 类别 | 论文规模 | 本复现已完成（全预算） | 进行中 | 覆盖率 |
 |---|---:|---:|---:|---:|
-| OGBench 主任务（FINO） | 35 | 1（antmaze-large task1：**最终成功率 100%**） | 2（cube-double-play ~75%、humanoidmaze-medium ~75%） | 1/35 完整；含进行中 ≈ 8.6% |
+| OGBench 主任务（FINO） | 35 | **3**（antmaze-large 100%、humanoidmaze-medium 100%、cube-double-play 72%） | 0 | 3/35 ≈ 8.6% |
 | OGBench 主任务（FQL baseline） | 35 | 1（antmaze-large task1：**92%**） | 0 | 1/35 ≈ 2.9% |
 | D4RL 任务（FINO） | 10 | 0 | 0 | 0% |
 | 论文消融实验 | 约 5 组 | 2D 玩具机制验证（非论文环境，只验证机制方向） | — | 机制级，非论文环境 |
@@ -516,11 +536,11 @@ E:\FINO\.venv\Scripts\python.exe main.py --agent=agents/fql.py --env_name=antmaz
 **已完成的核心全预算实验**（GPU，论文预算 1M 离线 + 500k 在线、每 50k 步 × 50 episodes）：
 
 - `antmaze-large-navigate-singletask-v0`：**FINO 100% vs FQL 92%**（§7.2，31 个评估点 × 50 episodes）；
-- 进行中（约 75%）：`cube-double-play-singletask-v0`（FINO，当前成功率 ~0.5）、
-  `humanoidmaze-medium-navigate-singletask-v0`（FINO，当前成功率 0.6–0.95，在线阶段仍有提升）。
+- `humanoidmaze-medium-navigate-singletask-v0`：**FINO 100%**（峰值 100%，127.4 min）；
+- `cube-double-play-singletask-v0`：**FINO 72%**（峰值 92%，最后 5 次均值 84%，144.2 min）。
 
-**结论**：论文主表 45 个任务中，本复现完整完成 **1 个任务、2 个 agent**（约 2.2% 的任务覆盖），
-另有 2 个 OGBench 任务接近完成（含进行中约 7%）。覆盖的是"最核心的验证性任务"，
+**结论**：论文主表 45 个任务中，本复现完整完成 **3 个 OGBench 任务**（其中 antmaze-large 含 FINO+FQL 同预算对比，
+约 6.7% 的任务覆盖；按 OGBench 35 个任务计约 8.6%）。覆盖的是"最核心的验证性任务"，
 而不是论文的全量表格；要接近论文规模还需要：
 
 1. 再选 3–5 个代表任务（如 humanoidmaze-large、antmaze-giant、puzzle-4x4），约 **10–20 GPU 小时**；

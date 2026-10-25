@@ -8,7 +8,11 @@
 >
 > **FINO 最终成功率 100%（1.00），FQL 92%（0.92）**；FINO 在线微调阶段 0.82 → 1.00；单任务 2.3–2.5 小时。
 >
-> 详细数据：[`results/gpu_summary.md`](results/gpu_summary.md)、[`gpu_exp/`](gpu_exp/)、[`docs/02_reproduction_report.md`](docs/02_reproduction_report.md) §7.2。
+> 公式逻辑消融（2026-10-24）：论文 Eq.(7) 二次型 schedule 按字面实现会崩溃（最终 0.04），官方指数 schedule 最优（1.00）；β 符号方向影响很小（0.94 vs 0.96）。
+>
+> 扩展任务（同样全预算）：**humanoidmaze-medium 100%、cube-double-play 72%（峰值 92%）**；FINO 已在 3 个 OGBench 任务上完成论文预算复现（3/45 ≈ 6.7%）。
+>
+> 详细数据：[`results/gpu_summary.md`](results/gpu_summary.md)、[`results/extended_summary.md`](results/extended_summary.md)、[`gpu_exp/`](gpu_exp/)、[`docs/02_reproduction_report.md`](docs/02_reproduction_report.md) §7.2 / §7.5。
 
 ## 先看这里
 

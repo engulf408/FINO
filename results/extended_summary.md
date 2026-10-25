@@ -1,0 +1,8 @@
+# 全预算 GPU 任务汇总（FINO：3 个 OGBench 任务 + FQL 参考）
+
+| task | env | agent | steps | eval_points | success_peak | success_final | success_last5_mean | return_final | minutes |
+|---|---|---|---|---|---|---|---|---|---|
+| antmaze-large | antmaze-large-navigate-singletask-v0 | FINO | 1500000 | 31 | 1.0 | 1.0 | 0.976 | -383.4 | 150.3 |
+| cube-double-play | cube-double-play-singletask-v0 | FINO | 1500000 | 31 | 0.92 | 0.72 | 0.84 | -314.8 | 144.2 |
+| humanoidmaze-medium | humanoidmaze-medium-navigate-singletask-v0 | FINO | 1500000 | 16 | 1.0 | 1.0 | 0.96 | -1184.3 | 127.4 |
+| antmaze-large (FQL) | antmaze-large-navigate-singletask-v0 | FQL | 1500000 | 31 | 0.98 | 0.92 | 0.88 | -517.9 | 136.6 |

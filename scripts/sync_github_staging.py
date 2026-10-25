@@ -45,6 +45,29 @@ def clean_gpu_exp():
             os.rmdir(dirpath)
 
 
+def clean_run_dir(rel):
+    """Keep only CSV/JSON under a run-output directory (drop binary checkpoints)."""
+    root = os.path.join(DST, rel)
+    if not os.path.isdir(root):
+        return
+    for dirpath, dirs, files in os.walk(root):
+        for f in files:
+            if os.path.splitext(f)[1] not in ('.csv', '.json'):
+                os.remove(os.path.join(dirpath, f))
+    for dirpath, dirs, files in os.walk(root, topdown=False):
+        if dirpath != root and not os.listdir(dirpath):
+            os.rmdir(dirpath)
+
+
+def clean_wsl_binaries():
+    root = os.path.join(DST, 'wsl_setup')
+    if not os.path.isdir(root):
+        return
+    for f in os.listdir(root):
+        if f.endswith(('.tar.gz', '.msi')):
+            os.remove(os.path.join(root, f))
+
+
 def trim_logs():
     src_root = os.path.join(SRC, 'logs')
     dst_root = os.path.join(DST, 'logs')
@@ -80,7 +103,16 @@ def main():
     copy_file('constraints.txt')
     copy_file('.gitignore')
     copy_tree('gpu_exp')
+    copy_tree('course')
+    course_dir = os.path.join(DST, 'course')
+    if os.path.isdir(course_dir):
+        for d in os.listdir(course_dir):
+            if d.startswith('.dsh-office-'):
+                shutil.rmtree(os.path.join(course_dir, d), ignore_errors=True)
     clean_gpu_exp()
+    clean_run_dir('exp')
+    clean_run_dir('exp_restore')
+    clean_wsl_binaries()
     trim_logs()
     # remove ppt preview temp dirs / big files if any
     ppt_dir = os.path.join(DST, 'ppt')

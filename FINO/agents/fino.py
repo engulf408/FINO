@@ -2,6 +2,8 @@ import copy
 from typing import Any
 
 import flax
+import os
+
 import jax
 import jax.numpy as jnp
 import ml_collections
@@ -11,6 +13,10 @@ import numpy as np
 from utils.encoders import encoder_modules
 from utils.flax_utils import ModuleDict, TrainState, nonpytree_field
 from utils.networks import ActorVectorField, Value
+
+
+_SCHED = os.environ.get('FINO_NOISE_SCHEDULE', 'exp')  # [ablation] exp | quad | none
+_BETA_MODE = os.environ.get('FINO_BETA_MODE', 'official')  # [ablation] official | paper | fixed
 
 
 class FINOAgent(flax.struct.PyTreeNode):
@@ -54,7 +60,18 @@ class FINOAgent(flax.struct.PyTreeNode):
         vel = x_1 - x_0
 
         normal_noise = jax.random.normal(nor_rng, shape=(batch_size, action_dim))
-        noise_scale = jnp.exp(-(t * -10 + 10)) * self.config['noise_scale']
+        # [ablation patch] selectable noise schedule:
+        #   exp  = official eta*exp(10(t-1))
+        #   quad = paper Eq.(7) sigma_t = sqrt((eta^2-2*eta)t^2 + 2*eta*t)
+        #   none = no injection
+        _eta = self.config['noise_scale']
+        if _SCHED == 'quad':
+            _sigma_sq = (_eta ** 2 - 2.0 * _eta) * t ** 2 + 2.0 * _eta * t
+            noise_scale = jnp.sqrt(jnp.maximum(_sigma_sq, 0.0))
+        elif _SCHED == 'none':
+            noise_scale = jnp.zeros_like(t)
+        else:
+            noise_scale = jnp.exp(-(t * -10 + 10)) * _eta
         normal_samples = x_t + noise_scale * normal_noise
 
         pred = self.network.select('actor_bc_flow')(batch['observations'], normal_samples, t, params=grad_params)
@@ -228,7 +245,13 @@ class FINOAgent(flax.struct.PyTreeNode):
         action_samples_np = action_samples_np.transpose(1, 0, 2)
 
         entropy = estimate_entropy_sklearn(action_samples_np, num_components=n_components)
-        new_beta = max(0, self.beta - 0.1 * (-self.config['action_dim'] - entropy))
+        # [ablation patch] selectable beta update direction
+        if _BETA_MODE == 'paper':
+            new_beta = max(0.0, self.beta - 0.1 * (entropy + self.config['action_dim']))
+        elif _BETA_MODE == 'fixed':
+            new_beta = self.beta
+        else:
+            new_beta = max(0, self.beta - 0.1 * (-self.config['action_dim'] - entropy))
         return self.replace(beta=new_beta), entropy
 
     @classmethod
