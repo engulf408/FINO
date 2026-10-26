@@ -2,7 +2,7 @@
 
 本目录是对 <https://github.com/CTID282/FINO>（ICLR 2026 论文 *Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning* 官方实现）的复现工作区。
 
-## 最新结果（2026-10-21，GPU 全预算）
+## 最新结果（2026-10-26，GPU 全预算）
 
 > 在 WSL2 + RTX 5070 + JAX 0.12(CUDA) 上按**论文原预算**（1M 离线 + 500k 在线、每 50k 步评估 50 episodes）完成 antmaze-large 复现：
 >
@@ -24,34 +24,33 @@
 | WSL2 + GPU 环境（安装/运行脚本） | [`wsl_setup/`](wsl_setup/) |
 | 2D 玩具机制验证报告 | [`experiments/toy/RESULTS.md`](experiments/toy/RESULTS.md) |
 | 结果曲线与汇总 | [`results/`](results/) |
+| 公式逻辑消融结果（Eq.(7) 幅度/形状、seed、跨任务、K） | [`docs/03_formula_ablation_results.md`](docs/03_formula_ablation_results.md) |
 | 全部原始日志 | [`logs/`](logs/) |
-| 汇报 PPT | [`ppt/FINO复现工作与结果分析.pptx`](ppt/FINO复现工作与结果分析.pptx) |
+| **课程汇报 PPT（强化学习课程大作业，12 页，最终版）** | [`course/RL课程_FINO复现_结果与分析.pptx`](course/RL课程_FINO复现_结果与分析.pptx) |
+| 详细汇报 PPT（21 页，含扩展任务与消融细节） | [`ppt/FINO复现工作与结果分析.pptx`](ppt/FINO复现工作与结果分析.pptx) |
+| 5 分钟精简版 PPT | [`ppt/FINO复现-5分钟汇报.pptx`](ppt/FINO复现-5分钟汇报.pptx) |
 
 ## 目录
 
 ```
-FINO/
-├── FINO/                  # 官方源码 + 5 处平台适配补丁（算法未改）
-├── _extract/FINO-main/    # 未改动的官方源码备份（用于 diff）
-├── .venv/                 # Windows CPU 环境（Python 3.11 + JAX 0.4.35 CPU）
-├── wsl_setup/             # WSL2 + Ubuntu + JAX CUDA 安装脚本
-├── constraints.txt        # Windows CPU 环境钉版依赖
-├── docs/                  # 01 源码分析、02 复现报告、patches.diff、requirements-lock.txt
-├── scripts/               # 复现运行/下载/绘图/GPU 基准与结果分析脚本
-│   ├── bench_gpu.py               # GPU 速度基准（FINO/FQL/环境）
-│   ├── analyze_gpu_results.py     # 全预算结果汇总与曲线
-│   ├── analyze_ckpt_full.py       # 全预算 checkpoint 级分析
-│   ├── analyze_checkpoint.py      # 小预算 checkpoint 分析
-│   ├── run_repro.ps1              # 一键运行 CPU 阶段实验
-│   ├── dl_parallel.py             # 数据集多线程 Range 下载器
-│   └── plot_results.py            # CPU 阶段曲线
-├── experiments/toy/       # 2D/6D 机制验证
-├── exp/                   # CPU 阶段实验输出
-├── gpu_exp/               # 全预算 GPU 实验输出（CSV/flags/1M checkpoint）
-├── results/               # 曲线 PNG、summary、gpu_summary、checkpoint 分析
-├── logs/                  # 安装、下载、训练、GPU 运行日志
-└── ppt/                   # 复现汇报 PPT 与生成脚本
+FINO/                        # 本仓库（强化学习课程 FINO 复现项目）
+├── FINO/                    # 官方源码 + 5 处平台适配补丁（算法未改）
+├── wsl_setup/               # WSL2 + Ubuntu + JAX CUDA 安装/运行/消融脚本
+├── constraints.txt          # Windows CPU 环境钉版依赖
+├── docs/                    # 01 源码分析、02 复现报告、03 公式消融、patches.diff
+├── course/                  # 强化学习课程汇报：PPT + 生成脚本
+├── ppt/                     # 早期汇报 PPT（5 分钟精简版 / 21 页详细版）
+├── scripts/                 # 运行/下载/绘图/GPU 基准/消融分析脚本
+├── experiments/toy/         # 2D/6D 机制验证
+├── exp/                     # CPU 阶段实验输出
+├── exp_restore/             # checkpoint 恢复实验输出
+├── gpu_exp/                 # 全预算 GPU 实验输出（CSV/flags/1M checkpoint）
+├── results/                 # 曲线、汇总、消融图与 checkpoint 分析
+├── logs/                    # 安装、下载、训练、GPU 运行日志
+└── README.md
 ```
+
+> 本仓库只保留**强化学习课程**的 FINO 复现内容（复现代码、实验数据、图表、报告与课程 PPT）；优化方法课程相关材料已移除。
 
 ## 快速开始
 

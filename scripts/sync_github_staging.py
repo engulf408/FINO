@@ -92,7 +92,12 @@ def main():
     n = 0
     n += copy_tree('FINO', exclude_names={'__pycache__', 'wandb'})
     n += copy_tree('docs')
-    n += copy_tree('scripts')
+    n += copy_tree('scripts', exclude_names={'publish'})
+    # never publish credentials/publishing helpers
+    for _f in ('publish_github_api.py', 'publish_update_api.py', 'publish_api.py'):
+        _p = os.path.join(DST, 'scripts', _f)
+        if os.path.exists(_p):
+            os.remove(_p)
     n += copy_tree('wsl_setup')
     n += copy_tree('results')
     n += copy_tree('ppt', exclude_names={})
